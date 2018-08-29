@@ -15,6 +15,11 @@
           top: auto;
           max-width: 33%;
       }
+      @media screen and (max-width: 604px) {
+        div.w3-top {
+          display: none;
+        }
+      }
       </style>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
@@ -27,7 +32,7 @@
     <div class="w3-row-padding">
     
       <!-- Left Column -->
-      <div id="leftColumn" class="w3-top w3-third">
+      <div id="leftColumn" class="w3-third">
       
         <div class="w3-white w3-text-grey w3-card-4">
           <div class="w3-container w3-center" >
@@ -132,7 +137,7 @@
             <a href="#education" class="w3-bar-item w3-button"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-small"></i>Education</a>
             <a href="#publications" class="w3-bar-item w3-button"><i class="fa fa-book fa-fw w3-margin-right w3-small"></i>Publications</a>
             <a href="#interests" class="w3-bar-item w3-button"><i class="fa fa-heart fa-fw w3-margin-right w3-small"></i>Interests</a>
-            <a onClick="closeMenu()" class="w3-btn w3-text-grey w3-right"> <i id="close" class="fa fa-times" aria-hidden="true"></i></a>
+            <a href="javascript:void(0)" onClick="closeMenu()" class="w3-btn w3-text-grey w3-right"> <i id="close" class="fa fa-times" aria-hidden="true"></i></a>
           </div>
         </div>
 

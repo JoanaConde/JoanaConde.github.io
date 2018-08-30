@@ -26,7 +26,7 @@
   <body class="w3-light-grey">
 
   <!-- Page Container -->
-  <div class="w3-content w3-margin-top" style="max-width:1400px;">
+  <div class="w3-content w3-margin-top" style="max-width:2000px;">
 
     <!-- The Grid -->
     <div class="w3-row-padding">
@@ -152,37 +152,41 @@
     $(document).ready(function() {
       //beginning
       var winHeight = $(window).height();   // returns height of browser viewport
-      var winWidth = $(window).width();   // returns width of browser viewport
+      var winWidth = $(window).width();     // returns width of browser viewport
 
       //debug
       //console.log(winWidth);
       //console.log(winHeight);
 
-      if(winWidth < 601){  //804
-        var x = document.getElementById("leftColumn");
-        if (x.className.indexOf("w3-top") == 1) {
-            x.className = x.className.replace("w3-top", "w3-third");
+     if(winWidth < 584){  //804  601  584
+        if ($("#leftColumn").find("w3-top") == 1) {
+          $("#leftColumn").removeClass("w3-top");
+          $("#leftColumn").addClass("w3-third");
         } else {
-          if (x.className.indexOf("w3-third") == 1) {
+          if ($("#leftColumn").find("w3-third") == 1) {
             //do nothing..
           } else {
-            x.className = "w3-third";
+            $("#leftColumn").addClass("w3-third");
           }
         }
+
+        document.getElementById("menu").style.width = "200px";
       }
-      if(winWidth >= 601){
-        var x = document.getElementById("leftColumn");
-        if (x.className.indexOf("w3-third") == 1) {
-            x.className = x.className.replace("w3-third", "w3-top");
+      if(winWidth >= 584){
+        if ($("#leftColumn").find("w3-third") == 1) {
+            $("#leftColumn").removeClass("w3-third");
+            $("#leftColumn").addClass("w3-top");
         } else {
-          if (x.className.indexOf("w3-top") == 1) {
+          if ($("#leftColumn").find("w3-top") == 1) {
             //do nothing..
           } else {
-            x.className = "w3-top";
+            $("#leftColumn").addClass("w3-top");
           }
         }
+        document.getElementById("menu").style.width = "300px";
       }
-    });
+    });  
+
 
     //windows resize
     window.onresize = function(event) {
@@ -215,6 +219,7 @@
             x.className = "w3-third";
           }
         }
+        document.getElementById("menu").style.width = "200px";
       }
       if(winWidth >= 601){
         var x = document.getElementById("leftColumn");
@@ -228,6 +233,7 @@
           }
         }
       }
+      document.getElementById("menu").style.width = "300px";
     };
 
     //Menu
